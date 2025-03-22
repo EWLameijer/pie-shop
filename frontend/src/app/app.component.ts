@@ -9,9 +9,12 @@ import { PieService } from './pie.service';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title: string = '';
+  title: string = 'Welcome to my Pie Shop!';
+  pieOfTheDay: string = '';
 
   constructor(pieService: PieService) {
-    pieService.fetchPie().subscribe((pie) => (this.title = pie.description));
+    pieService
+      .fetchPie()
+      .subscribe((pie) => (this.pieOfTheDay = pie.description));
   }
 }
